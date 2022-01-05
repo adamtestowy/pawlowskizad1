@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import OtherPage from './OtherPage';
+import Home from './Home';
 import Fib from './Fib';
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
           >
             Learn React 3
           </a>
-          <Link to="/">Home</Link>
-          <Link to="/otherpage">Other Page</Link>
+          <Link to="/home">Home</Link>
+          <Link to="/otherpage">Other Page (Documentation)</Link>
         </header>
         <div>
           <Route exact path="/" component={Fib} />
           <Route path="/otherpage" component={OtherPage} />
+          <Route path="/home" component={Home} />
         </div>
       </div>
     </Router>
