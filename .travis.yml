@@ -1,0 +1,24 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t piotrpawlowski77/pawlowskizad1:test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true piotrpawlowski77/pawlowskizad1:test npm test
+
+after_success:
+  - docker build -t piotrpawlowski77/pawlowskizad1:fib-client ./client
+  - docker build -t piotrpawlowski77/pawlowskizad1:fib-nginx ./nginx
+  - docker build -t piotrpawlowski77/pawlowskizad1:fib-server ./server
+  - docker build -t piotrpawlowski77/pawlowskizad1:fib-worker ./worker
+  # Logowanie do docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Push obrazow do docker hub
+  - docker push piotrpawlowski77/pawlowskizad1:fib-client
+  - docker push piotrpawlowski77/pawlowskizad1:fib-nginx
+  - docker push piotrpawlowski77/pawlowskizad1:fib-server
+  - docker push piotrpawlowski77/pawlowskizad1:fib-worker
