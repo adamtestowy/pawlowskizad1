@@ -22,3 +22,4 @@ after_success:
   - docker push piotrpawlowski77/pawlowskizad1:fib-nginx
   - docker push piotrpawlowski77/pawlowskizad1:fib-server
   - docker push piotrpawlowski77/pawlowskizad1:fib-worker
+

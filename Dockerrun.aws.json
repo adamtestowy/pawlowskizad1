@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "client",
+        "image": "piotrpawlowski77/pawlowskizad1:fib-client",
+        "hostname": "client",
+        "essential": false,
+        "memory": 128
+      },
+      {
+        "name": "server",
+        "image": "piotrpawlowski77/pawlowskizad1:fib-server",
+        "hostname": "api",
+        "essential": false,
+        "memory": 128
+      },
+      {
+        "name": "worker",
+        "image": "piotrpawlowski77/pawlowskizad1:fib-worker",
+        "hostname": "worker",
+        "essential": false,
+        "memory": 128
+      },
+      {
+        "name": "nginx",
+        "image": "piotrpawlowski77/pawlowskizad1:fib-nginx",
+        "hostname": "nginx",
+        "essential": true,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 80
+          }
+        ],
+        "links": ["client", "server"],
+        "memory": 128
+      }
+    ]
+  }
