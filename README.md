@@ -15,6 +15,9 @@ Redis: Przechowuje wspolczynniki k I wyliczone wartosci w postaci: klucz-wartosc
 Worker: Czeka na wprowadzenie nowej wartosci wsp. K. Pobiera kazda kolejna wartosc wsp K. Wylicza wartosc ciagu I przekazuje do bazy Redis.
 Postgres: Przechowa liste z wspolczynnikami ciagu Fibonacciego.
 
+Rysunek architektury (na bazie lab9):
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/1_1_1_schemat.png)
+
 ### Build with Docker Compose
 
 	$ docker compose -f dockercompose.dev.yml up –build
