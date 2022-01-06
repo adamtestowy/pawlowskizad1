@@ -18,7 +18,16 @@ Postgres: Przechowa liste z wspolczynnikami ciagu Fibonacciego.
 Rysunek architektury (na bazie lab9):
 ![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/1_1_1_schemat.png)
 
+Dzialanie uslugi:
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/z1_1.png)
+
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/z1_5_running.png)
+
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/z1_6_running2.png)
+
 ### Build with Docker Compose
+
+Usluga jest przygotowana na etapie rozwoju (dev: docker-compose.dev)
 
 	$ docker compose -f dockercompose.dev.yml up –build
 	
@@ -42,4 +51,6 @@ Koncepcja jest nastepujaca:
 
 Niestety nie bylem w stanie uruchomic triggera na Travis, poniewaz na moim koncie w travis skonczyl sie miesiecznny dostep (informacja na czerwono). 
 
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/1_3_travis.png)
 
+![alt text](https://github.com/adamtestowy/pawlowskizad1/blob/main/img/z1_4_hub.png)
